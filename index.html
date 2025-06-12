@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #7fffd4, #40e0d0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            cursor: pointer;
+        }
+        .heart-svg {
+            width: 320px;
+            height: 320px;
+            display: block;
+        }
+        .piece {
+            opacity: 0;
+            stroke: #b30000;
+            stroke-width: 3;
+            transition: opacity 0.5s, stroke 0.7s;
+        }
+        .piece.visible {
+            opacity: 1;
+        }
+        .piece.nostroke {
+            stroke: none;
+        }
+        .pulse {
+            animation: pulse 1.2s infinite;
+            transform-origin: 50% 60%;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        .click-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+            transition: opacity 0.7s;
+        }
+        .click-text.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <svg class="heart-svg" viewBox="0 0 320 320">
+            <!-- Peças do coração (5 peças para efeito de quebra-cabeça) -->
+            <path id="p1" class="piece" fill="#ff4d4d" d="M160,270 Q80,200 60,140 Q40,80 100,60 Q140,50 160,90 Q180,50 220,60 Q280,80 260,140 Q240,200 160,270 Z"/>
+            <path id="p2" class="piece" fill="#ff6666" d="M160,90 Q180,50 220,60 Q280,80 260,140 Q240,200 200,180 Q210,140 200,110 Q190,90 160,90 Z"/>
+            <path id="p3" class="piece" fill="#ff3333" d="M160,90 Q140,50 100,60 Q40,80 60,140 Q80,200 120,180 Q110,140 120,110 Q130,90 160,90 Z"/>
+            <path id="p4" class="piece" fill="#ff1a1a" d="M120,180 Q80,200 160,270 Q240,200 200,180 Q180,200 160,200 Q140,200 120,180 Z"/>
+            <path id="p5" class="piece" fill="#ff8080" d="M160,90 Q190,90 200,110 Q210,140 200,180 Q180,200 160,200 Q140,200 120,180 Q110,140 120,110 Q130,90 160,90 Z"/>
+        </svg>
+        <div class="click-text" id="clickText">Clique Aqui</div>
+    </div>
+    <script>
+        // Animação de montagem das peças
+        const pieces = [
+            document.getElementById('p1'),
+            document.getElementById('p2'),
+            document.getElementById('p3'),
+            document.getElementById('p4'),
+            document.getElementById('p5')
+        ];
+        const clickText = document.getElementById('clickText');
+        const container = document.getElementById('container');
+        let delay = 0;
+        pieces.forEach((piece, i) => {
+            setTimeout(() => {
+                piece.classList.add('visible');
+            }, delay);
+            delay += 500;
+        });
+        // Após todas as peças aparecerem, remove as linhas e faz pulsar
+        setTimeout(() => {
+            pieces.forEach(piece => piece.classList.add('nostroke'));
+            document.querySelector('.heart-svg').classList.add('pulse');
+            clickText.classList.add('visible');
+        }, delay + 700);
+        // Clique para ir para a próxima página
+        container.onclick = function() {
+            window.location.href = 'dia_dos_namorados.html';
+        };
+    </script>
+</body>
+</html> 
