@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #7fffd4, #40e0d0);
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        .carousel-item {
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .heart {
+            color: #ff4d4d;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        /* Espaço para adicionar suas imagens */
+        .carousel-item:nth-child(1) {
+            background-image: url('IMG-20250612-WA0110.jpg'); /* Substitua pelo nome da sua foto */
+        }
+        .carousel-item:nth-child(2) {
+            background-image: url('IMG-20250612-WA0111.jpg'); /* Substitua pelo nome da sua foto */
+        }
+        .carousel-item:nth-child(3) {
+            background-image: url('IMG-20250612-WA0108.jpg'); /* Substitua pelo nome da sua foto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div id="loveCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#loveCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#loveCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#loveCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="heart">❤️</h1>
+                            <h2>Nosso Amor</h2>
+                            <p class="message">Cada dia desde que nos conhecemos tem sido os melhores dias da minha vida.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="heart">💝</h1>
+                            <h2>Minha Inspiração</h2>
+                            <p class="message">Você faz cada dia eu ser uma pessoa melhor e me ensina como ser forte. Você é a razão do meu sorriso todos os dias.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="heart">💖</h1>
+                            <h2>Meu Presente</h2>
+                            <p class="message">Você é o meu presente todos os dias e eu sou muito grato a Deus por ter nos unido. Eu amo nossos dias, nossos cafés da manhã, os pezinhos gelados para me esfriar. Quero todos os dias dormir agarradinho para te esquentar e sentir o seu cheiro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#loveCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#loveCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
